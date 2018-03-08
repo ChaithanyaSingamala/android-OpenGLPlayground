@@ -3,23 +3,34 @@ package xiphosapps.openglplayground;
 
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
+import android.util.Log;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 public class TestRenderer implements GLSurfaceView.Renderer {
+
+    TestApplication test;
+
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig eglConfig) {
-        GLES20.glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
+        test = new Test1();
+        test.init();
     }
 
     @Override
     public void onSurfaceChanged(GL10 gl, int width, int height) {
-        GLES20.glViewport(0, 0, width, height);
+        gl.glViewport(100, 100, width-100, height-100);
+
+        Log.d("test/debug", "w=" +width + "h="+height);
+
+
     }
 
     @Override
     public void onDrawFrame(GL10 gl) {
-        GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
+
+        test.update();
+        test.render();
     }
 }

@@ -16,7 +16,7 @@ public class OpenGLESActivity extends AppCompatActivity {
         renderer = new TestRenderer();
 
         glSurfaceView = new GLSurfaceView(this);
-        glSurfaceView.setEGLContextClientVersion(2);
+        glSurfaceView.setEGLContextClientVersion(3);
         glSurfaceView.setRenderer(renderer);
 
         setContentView(glSurfaceView);
