@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class OpenGLESActivity extends AppCompatActivity {
 
-    private GLSurfaceView glSurfaceView;
+    private BaseGLSurfaceView glSurfaceView;
     private BaseRenderer renderer;
 
     @Override
@@ -20,11 +20,10 @@ public class OpenGLESActivity extends AppCompatActivity {
 
         RelativeLayout canvas = findViewById(R.id.canvas);
 
-        renderer = new Test1();
+        renderer = new Test2();
 
-        glSurfaceView = new GLSurfaceView(this);
-        glSurfaceView.setEGLContextClientVersion(3);
-        glSurfaceView.setRenderer(renderer);
+        glSurfaceView = new BaseGLSurfaceView(this);
+        glSurfaceView.setBaseRenderer(renderer);
         canvas.addView(glSurfaceView);
 
         TextView txtGroundTitle = (TextView)findViewById(R.id.txtGroundTitle);

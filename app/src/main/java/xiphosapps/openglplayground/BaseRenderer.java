@@ -30,4 +30,8 @@ public class BaseRenderer implements GLSurfaceView.Renderer{
     public String getTitle(){
         return "Using Base renderer";
     }
+
+    public void onTouchMovement(float dx, float dy){
+
+    }
 }
