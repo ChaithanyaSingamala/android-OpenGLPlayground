@@ -1,7 +1,7 @@
 #version 300 es
 precision mediump float;
 
-in vec3 vertexPosition;
+layout(location = 1) in vec3 vertexPosition;
 
 void main()
 {
